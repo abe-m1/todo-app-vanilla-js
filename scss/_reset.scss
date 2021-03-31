@@ -1,17 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 /*----------------------------
 	RESET: START
 ------------------------------*/
+// https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-  padding: 0; }
+  padding: 0;
+}
 
 /* Remove default margin */
 body,
@@ -26,42 +29,50 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0; }
+  margin: 0;
+}
 
 /* Set core root defaults */
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto; }
+  text-decoration-skip-ink: auto;
+}
 
 /* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
-  display: block; }
+  display: block;
+}
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 1em; }
+  margin-top: 1em;
+}
 
 /* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
-  font: inherit; }
+  font: inherit;
+}
 
 /* Blur images when they have no alt attribute */
 img:not([alt]) {
-  filter: blur(10px); }
+  filter: blur(10px);
+}
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -69,7 +80,9 @@ img:not([alt]) {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important; } }
+    scroll-behavior: auto !important;
+  }
+}
 
 /*----------------------------
 	Visually hidden
@@ -85,15 +98,5 @@ img:not([alt]) {
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-  white-space: nowrap !important; }
-
-body {
-  font-family: 'Josefin Sans', Helvetica, sans-serif; }
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  display: block; }
-
-.attribution a {
-  color: #3e52a3; }
+  white-space: nowrap !important;
+}
