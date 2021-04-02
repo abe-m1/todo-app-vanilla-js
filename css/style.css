@@ -87,8 +87,24 @@ img:not([alt]) {
   width: 1px !important;
   white-space: nowrap !important; }
 
+html {
+  font-size: 62.5%; }
+  @media (min-width: 600px) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 1200px) {
+    html {
+      font-size: 56.25%; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 75%; } }
+
 body {
-  font-family: 'Josefin Sans', Helvetica, sans-serif; }
+  font-family: 'Josefin Sans', Helvetica, sans-serif;
+  font-size: 1.8rem; }
 
 .attribution {
   font-size: 11px;
