@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <script async src="/js/main.js"></script>
     <link
       rel="icon"
       type="image/png"
@@ -18,7 +18,24 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">Todo</h1>
+      <header>
+        <h1 class="title">Todo</h1>
+        <div>
+          <img src="images/icon-moon.svg" alt="moon" />
+        </div>
+      </header>
+
+      <div class="input-container">
+        <input id="new-todo" placeholder="create a new todo" />
+      </div>
+      <div>
+        <ul id="todo-list"></ul>
+        <div class="footer">
+          <li>items left</li>
+          <li>clear completed</li>
+        </div>
+      </div>
+
       <div class="items-container">
         <div class="items-container-footer">
           <ul>

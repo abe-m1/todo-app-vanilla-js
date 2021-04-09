@@ -106,6 +106,69 @@ body {
   font-family: 'Josefin Sans', Helvetica, sans-serif;
   font-size: 1.8rem; }
 
+.container {
+  height: 100vh;
+  background: url("/images/bg-mobile-dark.jpg") no-repeat;
+  background-color: black; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem; }
+
+.input-container {
+  width: 90%;
+  margin: auto; }
+
+input {
+  width: 100%;
+  background-color: #393a4c;
+  border: none;
+  border-radius: 5px;
+  outline: none; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 4rem; }
+
+.todo-item {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  background-color: #393a4c;
+  color: white;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #777a92; }
+  .todo-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
+
+.footer {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  background-color: #393a4c;
+  color: white;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: none; }
+
+.round {
+  border: 2px solid red;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%; }
+
+.close-cross {
+  fill: red;
+  width: 20px;
+  height: 20px; }
+
 .attribution {
   font-size: 11px;
   text-align: center;
