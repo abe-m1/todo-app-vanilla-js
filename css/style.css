@@ -164,10 +164,16 @@ ul {
   width: 20px;
   border-radius: 50%; }
 
+.task-complete {
+  background-color: blue; }
+
 .close-cross {
   fill: red;
   width: 20px;
   height: 20px; }
+
+.line-through {
+  text-decoration: line-through; }
 
 .attribution {
   font-size: 11px;
