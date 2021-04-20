@@ -5,6 +5,12 @@ const footer = document.querySelector('.footer');
 const clearComplete = document.getElementById('clear-complete');
 const itemsLeft = document.getElementById('items-left');
 
+const allItems = document.getElementById('all-items');
+const activeItems = document.getElementById('active-items');
+const completedItems = document.getElementById('completed-items');
+
+allItems.style.color = 'red';
+
 // todoList.addEventListener('click', function (e) {
 //   e.preventDefault();
 //   console.log('ck', e.target.input, todoItems);
@@ -71,3 +77,41 @@ clearComplete.addEventListener('click', function () {
   }
   itemsLeft.innerText = `${todoItems.length} items left`;
 });
+
+function filterItems(status = '') {
+  console.log('status', status);
+  if (status === 'active') {
+    for (let item of todoItems) {
+      if (item.firstChild.classList.contains('task-complete')) {
+        item.style.display = 'none';
+      } else {
+        item.style.display = 'flex';
+      }
+    }
+    allItems.style.color = 'black';
+    activeItems.style.color = 'red';
+    completedItems.style.color = 'black';
+  } else if (status === 'completed') {
+    for (let item of todoItems) {
+      if (!item.firstChild.classList.contains('task-complete')) {
+        item.style.display = 'none';
+      } else {
+        item.style.display = 'flex';
+      }
+    }
+    allItems.style.color = 'black';
+    activeItems.style.color = 'black';
+    completedItems.style.color = 'red';
+  } else {
+    for (let item of todoItems) {
+      item.style.display = 'flex';
+    }
+    allItems.style.color = 'red';
+    activeItems.style.color = 'black';
+    completedItems.style.color = 'black';
+  }
+}
+
+activeItems.addEventListener('click', () => filterItems('active'));
+completedItems.addEventListener('click', () => filterItems('completed'));
+allItems.addEventListener('click', () => filterItems());
