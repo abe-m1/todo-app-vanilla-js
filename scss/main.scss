@@ -112,6 +112,16 @@ ul {
   font-size: 1.3rem;
 }
 
+.toggle-button {
+  background-image: url('../images/icon-moon.svg');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+.toggle-light {
+  background-image: url('../images/icon-sun.svg');
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
