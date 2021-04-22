@@ -142,7 +142,15 @@ activeItems.addEventListener('click', () => filterItems('active'));
 completedItems.addEventListener('click', () => filterItems('completed'));
 allItems.addEventListener('click', () => filterItems());
 
-toggleButton.addEventListener('click', () => {
-  console.log('toggle');
+toggleButton.addEventListener('click', (e) => {
+  console.log('toggle', e);
   toggleButton.classList.toggle('toggle-light');
+
+  console.log(toggleButton.classList.contains('toggle-light'));
+
+  if (toggleButton.classList.contains('toggle-light')) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
 });

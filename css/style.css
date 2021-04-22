@@ -87,6 +87,12 @@ img:not([alt]) {
   width: 1px !important;
   white-space: nowrap !important; }
 
+:root {
+  --background-color: black; }
+
+[data-theme='dark'] {
+  --background-color: white; }
+
 html {
   font-size: 62.5%; }
   @media (min-width: 600px) {
@@ -109,7 +115,7 @@ body {
 .container {
   height: 100vh;
   background: url("/images/bg-mobile-dark.jpg") no-repeat;
-  background-color: black; }
+  background-color: var(--background-color); }
 
 header {
   display: flex;

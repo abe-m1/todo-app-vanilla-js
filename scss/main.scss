@@ -28,7 +28,7 @@ body {
 .container {
   height: 100vh;
   background: url('/images/bg-mobile-dark.jpg') no-repeat;
-  background-color: black;
+  background-color: var(--background-color);
 }
 
 header {
