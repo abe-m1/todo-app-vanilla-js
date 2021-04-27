@@ -25,10 +25,12 @@ $veryDarkGrayishBlue: hsl(237, 14%, 26%);
 
 :root {
   --background-color: black;
+  --mobile-image: url('/images/bg-mobile-dark.jpg');
 }
 
 [data-theme='dark'] {
   --background-color: white;
+  --mobile-image: url('/images/bg-mobile-light.jpg');
 }
 
 //mixins

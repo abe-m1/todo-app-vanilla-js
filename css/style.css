@@ -88,10 +88,12 @@ img:not([alt]) {
   white-space: nowrap !important; }
 
 :root {
-  --background-color: black; }
+  --background-color: black;
+  --mobile-image: url('/images/bg-mobile-dark.jpg'); }
 
 [data-theme='dark'] {
-  --background-color: white; }
+  --background-color: white;
+  --mobile-image: url('/images/bg-mobile-light.jpg'); }
 
 html {
   font-size: 62.5%; }
@@ -114,7 +116,7 @@ body {
 
 .container {
   height: 100vh;
-  background: url("/images/bg-mobile-dark.jpg") no-repeat;
+  background: var(--mobile-image) no-repeat;
   background-color: var(--background-color); }
 
 header {
