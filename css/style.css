@@ -120,10 +120,17 @@ body {
   background-color: var(--background-color); }
 
 header {
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 3rem; }
+
+.title {
+  padding-top: 3px;
+  color: #fff;
+  font-size: 2.5rem; }
 
 .input-container {
   width: 90%;
@@ -153,6 +160,11 @@ ul {
   .todo-item:first-child {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
+
+.drag {
+  text-align: center;
+  margin-top: 3rem;
+  color: #393a4c; }
 
 .footer {
   display: flex;

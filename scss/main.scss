@@ -32,10 +32,18 @@ body {
 }
 
 header {
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 3rem;
+}
+
+.title {
+  padding-top: 3px;
+  color: #fff;
+  font-size: 2.5rem;
 }
 
 .input-container {
@@ -71,6 +79,12 @@ ul {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
+}
+
+.drag {
+  text-align: center;
+  margin-top: 3rem;
+  color: $veryDarkGrayishBlue;
 }
 
 .footer {
