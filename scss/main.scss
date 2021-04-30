@@ -100,6 +100,19 @@ ul {
   display: none;
 }
 
+.filter {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 3rem;
+  background-color: $veryDarkGrayishBlue;
+  color: white;
+  padding: 1rem;
+  justify-content: space-around;
+  border-radius: 10px;
+  // display: none;
+}
+
 .round {
   border: 2px solid red;
   height: 20px;
@@ -122,6 +135,11 @@ ul {
 }
 
 .footer li {
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.filter li {
   list-style: none;
   font-size: 1.3rem;
 }

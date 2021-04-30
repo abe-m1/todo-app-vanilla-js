@@ -178,6 +178,17 @@ ul {
   border-bottom-right-radius: 10px;
   display: none; }
 
+.filter {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 3rem;
+  background-color: #393a4c;
+  color: white;
+  padding: 1rem;
+  justify-content: space-around;
+  border-radius: 10px; }
+
 .round {
   border: 2px solid red;
   height: 20px;
@@ -196,6 +207,10 @@ ul {
   text-decoration: line-through; }
 
 .footer li {
+  list-style: none;
+  font-size: 1.3rem; }
+
+.filter li {
   list-style: none;
   font-size: 1.3rem; }
 
