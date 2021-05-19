@@ -124,6 +124,10 @@ body {
     .container {
       background: var(--desktop-image) no-repeat; } }
 
+.content-container {
+  max-width: 500px;
+  margin: auto; }
+
 header {
   width: 90%;
   margin: auto;
