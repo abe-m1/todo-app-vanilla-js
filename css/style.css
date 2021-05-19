@@ -89,11 +89,13 @@ img:not([alt]) {
 
 :root {
   --background-color: black;
-  --mobile-image: url('/images/bg-mobile-dark.jpg'); }
+  --mobile-image: url('/images/bg-mobile-dark.jpg');
+  --desktop-image: url('/images/bg-desktop-dark.jpg'); }
 
 [data-theme='dark'] {
   --background-color: white;
-  --mobile-image: url('/images/bg-mobile-light.jpg'); }
+  --mobile-image: url('/images/bg-mobile-light.jpg');
+  --desktop-image: url('/images/bg-desktop-light.jpg'); }
 
 html {
   font-size: 62.5%; }
@@ -118,6 +120,9 @@ body {
   height: 100vh;
   background: var(--mobile-image) no-repeat;
   background-color: var(--background-color); }
+  @media (min-width: 380px) {
+    .container {
+      background: var(--desktop-image) no-repeat; } }
 
 header {
   width: 90%;
@@ -134,14 +139,20 @@ header {
 
 .input-container {
   width: 90%;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  background-color: #393a4c;
+  padding: 1rem;
+  align-items: center; }
 
 input {
   width: 100%;
   background-color: #393a4c;
   border: none;
   border-radius: 5px;
-  outline: none; }
+  outline: none;
+  color: white;
+  margin-left: 1rem; }
 
 ul {
   margin: 0;
@@ -184,19 +195,25 @@ ul {
   margin: auto;
   margin-top: 3rem;
   background-color: #393a4c;
-  color: white;
+  color: #777a92;
   padding: 1rem;
   justify-content: space-around;
   border-radius: 10px; }
 
+.filter li:hover {
+  color: white; }
+
 .round {
-  border: 2px solid red;
+  border: 2px solid #777a92;
   height: 20px;
   width: 20px;
   border-radius: 50%; }
 
 .task-complete {
-  background-color: blue; }
+  background-image: url("../images/icon-check.svg"), linear-gradient(to left, #57ddff, #c058f3);
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
+  border: none; }
 
 .close-cross {
   fill: red;

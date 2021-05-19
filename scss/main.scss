@@ -29,6 +29,10 @@ body {
   height: 100vh;
   background: var(--mobile-image) no-repeat;
   background-color: var(--background-color);
+
+  @media (min-width: 380px) {
+    background: var(--desktop-image) no-repeat;
+  }
 }
 
 header {
@@ -49,6 +53,10 @@ header {
 .input-container {
   width: 90%;
   margin: auto;
+  display: flex;
+  background-color: $veryDarkGrayishBlue;
+  padding: 1rem;
+  align-items: center;
 }
 
 input {
@@ -57,6 +65,8 @@ input {
   border: none;
   border-radius: 5px;
   outline: none;
+  color: white;
+  margin-left: 1rem;
 }
 
 ul {
@@ -106,22 +116,30 @@ ul {
   margin: auto;
   margin-top: 3rem;
   background-color: $veryDarkGrayishBlue;
-  color: white;
+  color: $darkGrayishBlue;
   padding: 1rem;
   justify-content: space-around;
   border-radius: 10px;
   // display: none;
 }
 
+.filter li:hover {
+  color: white;
+}
+
 .round {
-  border: 2px solid red;
+  border: 2px solid $darkGrayishBlue;
   height: 20px;
   width: 20px;
   border-radius: 50%;
 }
 
 .task-complete {
-  background-color: blue;
+  background-image: url('../images/icon-check.svg'),
+    linear-gradient(to left, $checkBackgroundLeft, $checkBackgroundRight);
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
+  border: none;
 }
 
 .close-cross {

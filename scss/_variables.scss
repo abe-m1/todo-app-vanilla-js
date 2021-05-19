@@ -1,8 +1,8 @@
 //Primary
 
 $brightBlue: hsl(220, 98%, 61%);
-$checkBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
-
+$checkBackgroundLeft: hsl(192, 100%, 67%);
+$checkBackgroundRight: hsl(280, 87%, 65%);
 //Neutral
 
 //Light Theme
@@ -26,11 +26,13 @@ $veryDarkGrayishBlue: hsl(237, 14%, 26%);
 :root {
   --background-color: black;
   --mobile-image: url('/images/bg-mobile-dark.jpg');
+  --desktop-image: url('/images/bg-desktop-dark.jpg');
 }
 
 [data-theme='dark'] {
   --background-color: white;
   --mobile-image: url('/images/bg-mobile-light.jpg');
+  --desktop-image: url('/images/bg-desktop-light.jpg');
 }
 
 //mixins
