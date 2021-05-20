@@ -176,6 +176,15 @@ ul {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
 
+.desktop-filter {
+  display: none; }
+  @media (min-width: 380px) {
+    .desktop-filter {
+      display: flex;
+      width: 40%;
+      justify-content: space-between;
+      background: var(--desktop-image) no-repeat; } }
+
 .drag {
   text-align: center;
   margin-top: 3rem;
@@ -203,6 +212,9 @@ ul {
   padding: 1rem;
   justify-content: space-around;
   border-radius: 10px; }
+  @media (min-width: 380px) {
+    .filter {
+      display: none; } }
 
 .filter li:hover {
   color: white; }
