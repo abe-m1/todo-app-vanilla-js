@@ -43,51 +43,54 @@ function removeItem(e) {
   console.log('ck', e, todoItems);
 }
 
+function createItem(inputText = null) {
+  const newLi = document.createElement('li');
+  newLi.className = 'todo-item';
+  let circle = document.createElement('div');
+  circle.className = 'completed';
+  let cancel = document.createElement('a');
+  var img = new Image();
+  img.className = 'close-cross';
+  img.src = '../images/icon-cross.svg';
+  img.setAttribute('alt', 'close');
+  cancel.appendChild(img);
+
+  cancel.addEventListener('click', function () {
+    var li = this.parentNode;
+    li.remove();
+    itemsLeft.innerText = `${todoItems.length} items left`;
+  });
+
+  circle.addEventListener('click', function () {
+    circle.classList.toggle('task-complete');
+    console.log(circle.parentElement.parentElement);
+    circle.parentElement.classList.toggle('line-through');
+  });
+
+  let todoText = document.createTextNode(input.value || inputText);
+  circle.className = 'round';
+
+  newLi.appendChild(circle);
+  newLi.appendChild(todoText);
+  newLi.appendChild(cancel);
+
+  newLi.draggable = true;
+  newLi.addEventListener('drag', setDragging);
+  newLi.addEventListener('dragover', setDraggedOver);
+  newLi.addEventListener('drop', reorder);
+
+  todoList.appendChild(newLi);
+
+  console.log(input.value);
+
+  footer.style.display = 'flex';
+  input.value = '';
+}
+
 input.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-
-    const newLi = document.createElement('li');
-    newLi.className = 'todo-item';
-    let circle = document.createElement('div');
-    circle.className = 'completed';
-    let cancel = document.createElement('a');
-    var img = new Image();
-    img.className = 'close-cross';
-    img.src = '../images/icon-cross.svg';
-    img.setAttribute('alt', 'close');
-    cancel.appendChild(img);
-
-    cancel.addEventListener('click', function () {
-      var li = this.parentNode;
-      li.remove();
-      itemsLeft.innerText = `${todoItems.length} items left`;
-    });
-
-    circle.addEventListener('click', function () {
-      circle.classList.toggle('task-complete');
-      console.log(circle.parentElement.parentElement);
-      circle.parentElement.classList.toggle('line-through');
-    });
-
-    let todoText = document.createTextNode(input.value);
-    circle.className = 'round';
-
-    newLi.appendChild(circle);
-    newLi.appendChild(todoText);
-    newLi.appendChild(cancel);
-
-    newLi.draggable = true;
-    newLi.addEventListener('drag', setDragging);
-    newLi.addEventListener('dragover', setDraggedOver);
-    newLi.addEventListener('drop', reorder);
-
-    todoList.appendChild(newLi);
-
-    console.log(input.value);
-
-    footer.style.display = 'flex';
-    input.value = '';
+    createItem(event);
   }
   itemsLeft.innerText = `${todoItems.length} items left`;
 });
@@ -154,3 +157,7 @@ toggleButton.addEventListener('click', (e) => {
     document.documentElement.setAttribute('data-theme', 'light');
   }
 });
+
+createItem('item 1');
+createItem('item 2');
+createItem('item 3');

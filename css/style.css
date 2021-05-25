@@ -122,7 +122,8 @@ body {
   background-color: var(--background-color); }
   @media (min-width: 380px) {
     .container {
-      background: var(--desktop-image) no-repeat; } }
+      background: var(--desktop-image) no-repeat;
+      background-color: var(--background-color); } }
 
 .content-container {
   max-width: 500px;
@@ -182,8 +183,7 @@ ul {
     .desktop-filter {
       display: flex;
       width: 40%;
-      justify-content: space-between;
-      background: var(--desktop-image) no-repeat; } }
+      justify-content: space-between; } }
 
 .drag {
   text-align: center;
@@ -250,8 +250,9 @@ ul {
 .toggle-button {
   background-image: url("../images/icon-moon.svg");
   background-repeat: no-repeat;
-  width: 30px;
-  height: 30px; }
+  background-size: contain;
+  width: 25px;
+  height: 25px; }
 
 .toggle-light {
   background-image: url("../images/icon-sun.svg"); }
