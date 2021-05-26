@@ -27,12 +27,16 @@ $veryDarkGrayishBlue: hsl(237, 14%, 26%);
   --background-color: black;
   --mobile-image: url('/images/bg-mobile-dark.jpg');
   --desktop-image: url('/images/bg-desktop-dark.jpg');
+  --todo-background: hsl(237, 14%, 26%);
+  --todo-text: hsl(234, 39%, 85%);
 }
 
 [data-theme='dark'] {
-  --background-color: white;
+  --background-color: hsl(236, 33%, 92%);
   --mobile-image: url('/images/bg-mobile-light.jpg');
   --desktop-image: url('/images/bg-desktop-light.jpg');
+  --todo-background: white;
+  --todo-text: hsl(237, 14%, 26%);
 }
 
 //mixins

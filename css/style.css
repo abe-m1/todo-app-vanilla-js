@@ -90,12 +90,16 @@ img:not([alt]) {
 :root {
   --background-color: black;
   --mobile-image: url('/images/bg-mobile-dark.jpg');
-  --desktop-image: url('/images/bg-desktop-dark.jpg'); }
+  --desktop-image: url('/images/bg-desktop-dark.jpg');
+  --todo-background: hsl(237, 14%, 26%);
+  --todo-text: hsl(234, 39%, 85%); }
 
 [data-theme='dark'] {
-  --background-color: white;
+  --background-color: hsl(236, 33%, 92%);
   --mobile-image: url('/images/bg-mobile-light.jpg');
-  --desktop-image: url('/images/bg-desktop-light.jpg'); }
+  --desktop-image: url('/images/bg-desktop-light.jpg');
+  --todo-background: white;
+  --todo-text: hsl(237, 14%, 26%); }
 
 html {
   font-size: 62.5%; }
@@ -141,18 +145,21 @@ header {
   padding-top: 3px;
   color: #fff;
   font-size: 2.5rem; }
+  @media (min-width: 380px) {
+    .title {
+      font-size: 5.5rem; } }
 
 .input-container {
   width: 90%;
   margin: auto;
   display: flex;
-  background-color: #393a4c;
+  background-color: var(--todo-background);
   padding: 1rem;
   align-items: center; }
 
 input {
   width: 100%;
-  background-color: #393a4c;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -168,14 +175,14 @@ ul {
   display: flex;
   width: 90%;
   margin: auto;
-  background-color: #393a4c;
-  color: white;
-  padding: 1rem;
+  background-color: var(--todo-background);
+  color: var(--todo-text);
+  padding: 1.5rem;
   justify-content: space-between;
   border-bottom: 1px solid #777a92; }
   .todo-item:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px; }
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
 
 .desktop-filter {
   display: none; }
@@ -194,12 +201,12 @@ ul {
   display: flex;
   width: 90%;
   margin: auto;
-  background-color: #393a4c;
-  color: white;
-  padding: 1rem;
+  background-color: var(--todo-background);
+  color: var(--todo-text);
+  padding: 1.5rem;
   justify-content: space-between;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   display: none; }
 
 .filter {
