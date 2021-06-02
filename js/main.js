@@ -11,7 +11,7 @@ const completedItems = document.getElementById('completed-items');
 
 const toggleButton = document.querySelector('.toggle-button');
 
-allItems.style.color = 'red';
+allItems.style.color = 'hsl(220, 98%, 61%)';
 
 const setDraggedOver = (e) => {
   e.preventDefault();
@@ -117,9 +117,9 @@ function filterItems(status = '') {
         item.style.display = 'flex';
       }
     }
-    allItems.style.color = 'black';
-    activeItems.style.color = 'red';
-    completedItems.style.color = 'black';
+    allItems.style.color = 'hsl(234, 11%, 52%)';
+    activeItems.style.color = 'hsl(220, 98%, 61%)';
+    completedItems.style.color = 'hsl(234, 11%, 52%)';
   } else if (status === 'completed') {
     for (let item of todoItems) {
       if (!item.firstChild.classList.contains('task-complete')) {
@@ -128,16 +128,16 @@ function filterItems(status = '') {
         item.style.display = 'flex';
       }
     }
-    allItems.style.color = 'black';
-    activeItems.style.color = 'black';
-    completedItems.style.color = 'red';
+    allItems.style.color = 'hsl(234, 11%, 52%)';
+    activeItems.style.color = 'hsl(234, 11%, 52%)';
+    completedItems.style.color = 'hsl(220, 98%, 61%)';
   } else {
     for (let item of todoItems) {
       item.style.display = 'flex';
     }
-    allItems.style.color = 'red';
-    activeItems.style.color = 'black';
-    completedItems.style.color = 'black';
+    allItems.style.color = 'hsl(220, 98%, 61%)';
+    activeItems.style.color = 'hsl(234, 11%, 52%)';
+    completedItems.style.color = 'hsl(234, 11%, 52%)';
   }
 }
 
@@ -161,3 +161,4 @@ toggleButton.addEventListener('click', (e) => {
 createItem('item 1');
 createItem('item 2');
 createItem('item 3');
+itemsLeft.innerText = `${todoItems.length} items left`;

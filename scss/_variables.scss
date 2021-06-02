@@ -24,11 +24,14 @@ $veryDarkGrayishBlue: hsl(233, 14%, 35%);
 $veryDarkGrayishBlue: hsl(237, 14%, 26%);
 
 :root {
-  --background-color: black;
+  --background-color: hsl(235, 21%, 11%);
   --mobile-image: url('/images/bg-mobile-dark.jpg');
   --desktop-image: url('/images/bg-desktop-dark.jpg');
-  --todo-background: hsl(237, 14%, 26%);
-  --todo-text: hsl(234, 39%, 85%);
+  --todo-background: hsl(235, 24%, 19%);
+  --todo-text: hsl(234, 11%, 52%);
+  --outline: #393a4c;
+  --input-text: white;
+  --footer-hover: white;
 }
 
 [data-theme='dark'] {
@@ -37,6 +40,9 @@ $veryDarkGrayishBlue: hsl(237, 14%, 26%);
   --desktop-image: url('/images/bg-desktop-light.jpg');
   --todo-background: white;
   --todo-text: hsl(237, 14%, 26%);
+  --outline: hsl(234, 39%, 85%);
+  --input-text: hsl(237, 14%, 26%);
+  --footer-hover: hsl(237, 14%, 26%);
 }
 
 //mixins

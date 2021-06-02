@@ -88,18 +88,24 @@ img:not([alt]) {
   white-space: nowrap !important; }
 
 :root {
-  --background-color: black;
+  --background-color: hsl(235, 21%, 11%);
   --mobile-image: url('/images/bg-mobile-dark.jpg');
   --desktop-image: url('/images/bg-desktop-dark.jpg');
-  --todo-background: hsl(237, 14%, 26%);
-  --todo-text: hsl(234, 39%, 85%); }
+  --todo-background: hsl(235, 24%, 19%);
+  --todo-text: hsl(234, 11%, 52%);
+  --outline: #393a4c;
+  --input-text: white;
+  --footer-hover: white; }
 
 [data-theme='dark'] {
   --background-color: hsl(236, 33%, 92%);
   --mobile-image: url('/images/bg-mobile-light.jpg');
   --desktop-image: url('/images/bg-desktop-light.jpg');
   --todo-background: white;
-  --todo-text: hsl(237, 14%, 26%); }
+  --todo-text: hsl(237, 14%, 26%);
+  --outline: hsl(234, 39%, 85%);
+  --input-text: hsl(237, 14%, 26%);
+  --footer-hover: hsl(237, 14%, 26%); }
 
 html {
   font-size: 62.5%; }
@@ -132,6 +138,9 @@ body {
 .content-container {
   max-width: 500px;
   margin: auto; }
+  @media (min-width: 1000px) {
+    .content-container {
+      max-width: 42%; } }
 
 header {
   width: 90%;
@@ -139,15 +148,23 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 3rem; }
+  padding-top: 4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2.7rem; }
+  @media (min-width: 1000px) {
+    header {
+      padding-top: 7rem;
+      margin-bottom: 3.7rem; } }
 
 .title {
   padding-top: 3px;
   color: #fff;
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  letter-spacing: 6px; }
   @media (min-width: 380px) {
     .title {
-      font-size: 5.5rem; } }
+      font-size: 4.5rem; } }
 
 .input-container {
   width: 90%;
@@ -155,7 +172,11 @@ header {
   display: flex;
   background-color: var(--todo-background);
   padding: 1rem;
-  align-items: center; }
+  align-items: center;
+  border-radius: 4px; }
+  @media (min-width: 1000px) {
+    .input-container {
+      padding: 2rem; } }
 
 input {
   width: 100%;
@@ -163,13 +184,13 @@ input {
   border: none;
   border-radius: 5px;
   outline: none;
-  color: white;
+  color: var(--input-text);
   margin-left: 1rem; }
 
 ul {
   margin: 0;
   padding: 0;
-  margin-top: 4rem; }
+  margin-top: 2rem; }
 
 .todo-item {
   display: flex;
@@ -177,12 +198,25 @@ ul {
   margin: auto;
   background-color: var(--todo-background);
   color: var(--todo-text);
-  padding: 1.5rem;
+  padding: 1.2rem 1.5rem;
   justify-content: space-between;
-  border-bottom: 1px solid #777a92; }
+  border-bottom: 1px solid var(--outline); }
   .todo-item:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; }
+  @media (min-width: 1000px) {
+    .todo-item {
+      padding: 2rem; } }
+
+.todo-item a {
+  width: 20px;
+  height: 20px; }
+
+.todo-item img {
+  display: none; }
+
+.todo-item:hover img {
+  display: block; }
 
 .desktop-filter {
   display: none; }
@@ -207,14 +241,19 @@ ul {
   justify-content: space-between;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  display: none; }
+  display: none;
+  font-weight: 700; }
+
+.footer li:hover,
+.desktop-filter li:hover {
+  color: var(--footer-hover); }
 
 .filter {
   display: flex;
   width: 90%;
   margin: auto;
   margin-top: 3rem;
-  background-color: #393a4c;
+  background-color: var(--todo-background);
   color: #777a92;
   padding: 1rem;
   justify-content: space-around;
@@ -224,13 +263,23 @@ ul {
       display: none; } }
 
 .filter li:hover {
-  color: white; }
+  color: var(--footer-hover); }
 
 .round {
-  border: 2px solid #777a92;
+  border: 1px solid var(--outline);
   height: 20px;
   width: 20px;
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--todo-background), var(--todo-background)), radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
   border-radius: 50%; }
+
+.input-round {
+  border: 1px solid var(--outline);
+  border-radius: 50%;
+  height: 20px;
+  width: 22px; }
 
 .task-complete {
   background-image: url("../images/icon-check.svg"), linear-gradient(to left, #57ddff, #c058f3);
@@ -239,12 +288,12 @@ ul {
   border: none; }
 
 .close-cross {
-  fill: red;
   width: 20px;
   height: 20px; }
 
 .line-through {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  color: var(--outline); }
 
 .footer li {
   list-style: none;

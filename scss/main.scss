@@ -39,6 +39,9 @@ body {
 .content-container {
   max-width: 500px;
   margin: auto;
+  @media (min-width: 1000px) {
+    max-width: 42%;
+  }
 }
 
 header {
@@ -47,16 +50,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2.7rem;
+
+  @media (min-width: 1000px) {
+    padding-top: 7rem;
+    margin-bottom: 3.7rem;
+  }
 }
 
 .title {
   padding-top: 3px;
   color: #fff;
   font-size: 2.5rem;
+  letter-spacing: 6px;
 
   @media (min-width: 380px) {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -67,6 +79,11 @@ header {
   background-color: var(--todo-background);
   padding: 1rem;
   align-items: center;
+  border-radius: 4px;
+
+  @media (min-width: 1000px) {
+    padding: 2rem;
+  }
 }
 
 input {
@@ -75,14 +92,14 @@ input {
   border: none;
   border-radius: 5px;
   outline: none;
-  color: white;
+  color: var(--input-text);
   margin-left: 1rem;
 }
 
 ul {
   margin: 0;
   padding: 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .todo-item {
@@ -91,14 +108,29 @@ ul {
   margin: auto;
   background-color: var(--todo-background);
   color: var(--todo-text);
-  padding: 1.5rem;
+  padding: 1.2rem 1.5rem;
   justify-content: space-between;
-  border-bottom: 1px solid $darkGrayishBlue;
+  border-bottom: 1px solid var(--outline);
 
   &:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
+
+  @media (min-width: 1000px) {
+    padding: 2rem;
+  }
+}
+
+.todo-item a {
+  width: 20px;
+  height: 20px;
+}
+.todo-item img {
+  display: none;
+}
+.todo-item:hover img {
+  display: block;
 }
 
 .desktop-filter {
@@ -128,6 +160,12 @@ ul {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   display: none;
+  font-weight: 700;
+}
+
+.footer li:hover,
+.desktop-filter li:hover {
+  color: var(--footer-hover);
 }
 
 .filter {
@@ -135,7 +173,7 @@ ul {
   width: 90%;
   margin: auto;
   margin-top: 3rem;
-  background-color: $veryDarkGrayishBlue;
+  background-color: var(--todo-background);
   color: $darkGrayishBlue;
   padding: 1rem;
   justify-content: space-around;
@@ -148,14 +186,34 @@ ul {
 }
 
 .filter li:hover {
-  color: white;
+  color: var(--footer-hover);
 }
 
 .round {
-  border: 2px solid $darkGrayishBlue;
+  border: 1px solid var(--outline);
   height: 20px;
   width: 20px;
+
+  border: 1px solid transparent;
+  background-image: linear-gradient(
+      var(--todo-background),
+      var(--todo-background)
+    ),
+    radial-gradient(
+      circle at top left,
+      $checkBackgroundLeft,
+      $checkBackgroundRight
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
   border-radius: 50%;
+}
+
+.input-round {
+  border: 1px solid var(--outline);
+  border-radius: 50%;
+  height: 20px;
+  width: 22px;
 }
 
 .task-complete {
@@ -167,13 +225,13 @@ ul {
 }
 
 .close-cross {
-  fill: red;
   width: 20px;
   height: 20px;
 }
 
 .line-through {
   text-decoration: line-through;
+  color: var(--outline);
 }
 
 .footer li {
